@@ -26,8 +26,11 @@
           <tr>
             <th>Title</th>
             <th>Opinion</th>
-
           </tr>
+          <% @books.each do |book| %>
+          <tr><%= book.title %></tr>
+          <tr><%= book.opinion %></tr>
+          <% end %>
         </thead>
       </table>
     </div>
