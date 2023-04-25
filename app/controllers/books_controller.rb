@@ -9,20 +9,27 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @user = User.find(current_user.id)
     render :index
   end
 
   def show
     @book = Book.find(params[:id])
-    @user = current_user.id
+    @user = User.find(current_user.id)
   end
 
   def edit
+  end
+  
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :opinion)
+    params.require(:book).permit(:title, :body)
   end
 end
