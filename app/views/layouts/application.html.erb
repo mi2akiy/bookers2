@@ -30,28 +30,28 @@
                     Home
                     <% end %>
                   </li>
-                  
+
                   <li class="nav-item">
                     <%= link_to  users_path, class: 'nav-link text-light' do %>
                     <i class="fas fa-users" style="color: #ffffff;"></i>
                     User
                     <% end %>
                   </li>
-                  
+
                   <li class="nav-item">
                     <%= link_to books_path, class: 'nav-link text-light' do %>
                     <i class="fas fa-book-open" style="color: #ffffff;"></i>
                     Books
                     <% end %>
                   </li>
-                  
+
                   <li class="nav-item">
                     <%= link_to destroy_user_session_path, class: 'nav-link text-light', method: :delete do %>
                     <i class="fas fa-sign-out-alt" style="color: #ffffff;"></i>
                     Log out
                     <% end %>
                   </li>
-                  
+
                 <% else %>
                   <li class="nav-item">
                     <%= link_to  root_path, class: "nav-link text-light" do %>
@@ -66,21 +66,21 @@
                     About
                     <% end %>
                   </li>
-                  
+
                   <li class="nav-item">
                     <%= link_to new_user_registration_path, class: 'nav-link text-light' do %>
                     <i class="fas fa-user-plus" style="color: #ffffff;"></i>
                     Sign up
                     <% end %>
                   </li>
-                  
+
                   <li class="nav-item">
                     <%= link_to new_user_session_path, class: 'nav-link text-light' do %>
                     <i class="fas fa-sign-in-alt" style="color: #ffffff;"></i>
                     Log in
                     <% end %>
                   </li>
-                  
+
                 <% end %>
               </ul>
             </div>
@@ -88,10 +88,11 @@
         </nav>
       </header>
       <main>
+        <%= flash[:notice] %>
         
         <%= yield %>
       </main>
-      
+
   </body>
 
   <footer>
